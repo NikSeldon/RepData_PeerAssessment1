@@ -55,6 +55,10 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </div>
 
 
+<p>Note on SAH1: I copied the RMD file into my github folder and didnt realize, that i need to set the working directiory again for the different r-chunks (line 108).</p>
+<div id="so-when-running-the-code-please-change-the-working-directories-in-line-18-and-108." class="section level3">
+<h3>So when running the code, please change the working directories in line 18 and 108.</h3>
+</div>
 <div id="loading-and-preprocessing-the-data" class="section level2">
 <h2>Loading and preprocessing the data</h2>
 <p>Show any code that is needed to Load the data (i.e. read.csv()) Process/transform the data (if necessary) into a format suitable for your analysis.</p>
@@ -132,7 +136,8 @@ mean_steps_interval &lt;- summarise(activity, steps = mean(steps,na.rm=TRUE))</c
 <pre class="r"><code>number_na&lt;-sum(is.na(activity))</code></pre>
 <p>The total number of NAs in the monitoring data set is 2304. This is equivalent to the number of rows with NAs. Only column “steps” contains missing values. The relative amount of NAs compared to the whole data set is 13 %.</p>
 <p>In the following the above calculated averages (steps per 5-min interval) are used to fill the missing step values. A new data set called “activity_noNAs” is created with the missing data filled in.</p>
-<pre class="r"><code>activity_noNAs&lt;-read.csv(&quot;activity.csv&quot; )
+<pre class="r"><code>setwd(&quot;~/Dropbox/00_Coursera/05_repro_research/pa1/&quot;)
+activity_noNAs&lt;-read.csv(&quot;activity.csv&quot; )
 class(activity_noNAs$interval)&lt;-&quot;numeric&quot;</code></pre>
 <p>Create a new dataset that is equal to the original dataset but with the missing data filled in.</p>
 <pre class="r"><code>i&lt;-1

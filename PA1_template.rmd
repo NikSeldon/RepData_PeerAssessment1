@@ -4,8 +4,13 @@ output:
   html_document:
   keep_md: true
 ---
- 
- 
+
+Note on SAH1: I copied the RMD file into my github folder and didnt realize, that i need to 
+set the working directiory again for the different r-chunks (line 108). 
+
+###So when running the code, please change the working directories in line 18 and 108.
+
+
 ## Loading and preprocessing the data
 
 Show any code that is needed to Load the data (i.e. read.csv())
@@ -105,6 +110,7 @@ The total number of NAs in the monitoring data set is `r number_na `. This is eq
 In the following the above calculated averages (steps per 5-min interval) are used to fill the missing step values. A new data set called "activity_noNAs" is created with the missing data filled in. 
 
 ```{r}
+setwd("~/Dropbox/00_Coursera/05_repro_research/pa1/")
 activity_noNAs<-read.csv("activity.csv" )
 class(activity_noNAs$interval)<-"numeric"
 ```
