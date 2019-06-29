@@ -8,7 +8,7 @@ output:
 Note on SAH1: I copied the RMD file into my github folder and didnt realize, that i need to 
 set the working directiory again for the different r-chunks (line 108). 
 
-###So when running the code, please change the working directories in line 18 and 108.
+### So when running the code, please change the working directories in line 18 and 108.
 
 
 ## Loading and preprocessing the data
